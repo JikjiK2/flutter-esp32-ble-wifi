@@ -25,12 +25,11 @@ class BleDeviceModel {
 
   BleDevice toEntity() {
     return BleDevice(
-      deviceName: advName.isNotEmpty 
-          ? advName 
+      name: advName.isNotEmpty
+          ? advName
           : (platformName.isNotEmpty ? platformName : '알 수 없는 장치'),
-      macId: remoteId,
+      id: remoteId,
       rssi: rssi,
     );
   }
 }
-

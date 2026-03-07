@@ -2,17 +2,32 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <!-- Bluetooth Permissions -->
     <key>NSBluetoothAlwaysUsageDescription</key>
-    <string>Need BLE permission</string>
+    <string>This app uses Bluetooth to connect and control your Smart Farm devices.</string>
     <key>NSBluetoothPeripheralUsageDescription</key>
-    <string>Need BLE permission</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>Need Location permission</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Need Location permission</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Need Location permission</string>
+    <string>This app uses Bluetooth to connect and control your Smart Farm devices.</string>
 
+    <!-- Location Permissions (Required for WiFi Scanning) -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app needs location access to scan for nearby Wi-Fi networks and Smart Farm devices.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>This app needs location access to scan for nearby Wi-Fi networks and Smart Farm devices.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This app needs location access to scan for nearby Wi-Fi networks and Smart Farm devices.</string>
+
+    <!-- Google Sign-In Section -->
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.googleusercontent.apps.YOUR_REVERSED_CLIENT_ID</string>
+        </array>
+      </dict>
+    </array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

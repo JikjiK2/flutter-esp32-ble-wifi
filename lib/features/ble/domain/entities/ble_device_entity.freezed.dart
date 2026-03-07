@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$BleDevice {
 
- String get deviceName; String get macId; int get rssi;
+ String get id; String get name; int get rssi;
 /// Create a copy of BleDevice
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $BleDeviceCopyWith<BleDevice> get copyWith => _$BleDeviceCopyWithImpl<BleDevice>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BleDevice&&(identical(other.deviceName, deviceName) || other.deviceName == deviceName)&&(identical(other.macId, macId) || other.macId == macId)&&(identical(other.rssi, rssi) || other.rssi == rssi));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BleDevice&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.rssi, rssi) || other.rssi == rssi));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,deviceName,macId,rssi);
+int get hashCode => Object.hash(runtimeType,id,name,rssi);
 
 @override
 String toString() {
-  return 'BleDevice(deviceName: $deviceName, macId: $macId, rssi: $rssi)';
+  return 'BleDevice(id: $id, name: $name, rssi: $rssi)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $BleDeviceCopyWith<$Res>  {
   factory $BleDeviceCopyWith(BleDevice value, $Res Function(BleDevice) _then) = _$BleDeviceCopyWithImpl;
 @useResult
 $Res call({
- String deviceName, String macId, int rssi
+ String id, String name, int rssi
 });
 
 
@@ -62,10 +62,10 @@ class _$BleDeviceCopyWithImpl<$Res>
 
 /// Create a copy of BleDevice
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? deviceName = null,Object? macId = null,Object? rssi = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? rssi = null,}) {
   return _then(_self.copyWith(
-deviceName: null == deviceName ? _self.deviceName : deviceName // ignore: cast_nullable_to_non_nullable
-as String,macId: null == macId ? _self.macId : macId // ignore: cast_nullable_to_non_nullable
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,rssi: null == rssi ? _self.rssi : rssi // ignore: cast_nullable_to_non_nullable
 as int,
   ));
@@ -114,10 +114,7 @@ return $default(_that);case _:
 final _that = this;
 switch (_that) {
 case _BleDevice():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -152,10 +149,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String deviceName,  String macId,  int rssi)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  int rssi)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _BleDevice() when $default != null:
-return $default(_that.deviceName,_that.macId,_that.rssi);case _:
+return $default(_that.id,_that.name,_that.rssi);case _:
   return orElse();
 
 }
@@ -173,13 +170,10 @@ return $default(_that.deviceName,_that.macId,_that.rssi);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String deviceName,  String macId,  int rssi)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  int rssi)  $default,) {final _that = this;
 switch (_that) {
 case _BleDevice():
-return $default(_that.deviceName,_that.macId,_that.rssi);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that.id,_that.name,_that.rssi);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -193,10 +187,10 @@ return $default(_that.deviceName,_that.macId,_that.rssi);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String deviceName,  String macId,  int rssi)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  int rssi)?  $default,) {final _that = this;
 switch (_that) {
 case _BleDevice() when $default != null:
-return $default(_that.deviceName,_that.macId,_that.rssi);case _:
+return $default(_that.id,_that.name,_that.rssi);case _:
   return null;
 
 }
@@ -208,12 +202,12 @@ return $default(_that.deviceName,_that.macId,_that.rssi);case _:
 
 
 class _BleDevice implements BleDevice {
-  const _BleDevice({required this.deviceName, required this.macId, required this.rssi});
+  const _BleDevice({required this.id, required this.name, this.rssi = -100});
   
 
-@override final  String deviceName;
-@override final  String macId;
-@override final  int rssi;
+@override final  String id;
+@override final  String name;
+@override@JsonKey() final  int rssi;
 
 /// Create a copy of BleDevice
 /// with the given fields replaced by the non-null parameter values.
@@ -225,16 +219,16 @@ _$BleDeviceCopyWith<_BleDevice> get copyWith => __$BleDeviceCopyWithImpl<_BleDev
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BleDevice&&(identical(other.deviceName, deviceName) || other.deviceName == deviceName)&&(identical(other.macId, macId) || other.macId == macId)&&(identical(other.rssi, rssi) || other.rssi == rssi));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BleDevice&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.rssi, rssi) || other.rssi == rssi));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,deviceName,macId,rssi);
+int get hashCode => Object.hash(runtimeType,id,name,rssi);
 
 @override
 String toString() {
-  return 'BleDevice(deviceName: $deviceName, macId: $macId, rssi: $rssi)';
+  return 'BleDevice(id: $id, name: $name, rssi: $rssi)';
 }
 
 
@@ -245,7 +239,7 @@ abstract mixin class _$BleDeviceCopyWith<$Res> implements $BleDeviceCopyWith<$Re
   factory _$BleDeviceCopyWith(_BleDevice value, $Res Function(_BleDevice) _then) = __$BleDeviceCopyWithImpl;
 @override @useResult
 $Res call({
- String deviceName, String macId, int rssi
+ String id, String name, int rssi
 });
 
 
@@ -262,10 +256,10 @@ class __$BleDeviceCopyWithImpl<$Res>
 
 /// Create a copy of BleDevice
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? deviceName = null,Object? macId = null,Object? rssi = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? rssi = null,}) {
   return _then(_BleDevice(
-deviceName: null == deviceName ? _self.deviceName : deviceName // ignore: cast_nullable_to_non_nullable
-as String,macId: null == macId ? _self.macId : macId // ignore: cast_nullable_to_non_nullable
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,rssi: null == rssi ? _self.rssi : rssi // ignore: cast_nullable_to_non_nullable
 as int,
   ));

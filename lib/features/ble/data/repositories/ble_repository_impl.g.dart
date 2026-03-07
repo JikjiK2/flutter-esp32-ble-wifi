@@ -9,50 +9,43 @@ part of 'ble_repository_impl.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(blePlatformDataSource)
-const blePlatformDataSourceProvider = BlePlatformDataSourceProvider._();
+@ProviderFor(bleRepositoryImpl)
+const bleRepositoryImplProvider = BleRepositoryImplProvider._();
 
-final class BlePlatformDataSourceProvider
-    extends
-        $FunctionalProvider<
-          BlePlatformDataSource,
-          BlePlatformDataSource,
-          BlePlatformDataSource
-        >
-    with $Provider<BlePlatformDataSource> {
-  const BlePlatformDataSourceProvider._()
+final class BleRepositoryImplProvider
+    extends $FunctionalProvider<BleRepository, BleRepository, BleRepository>
+    with $Provider<BleRepository> {
+  const BleRepositoryImplProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'blePlatformDataSourceProvider',
+        name: r'bleRepositoryImplProvider',
         isAutoDispose: false,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$blePlatformDataSourceHash();
+  String debugGetCreateSourceHash() => _$bleRepositoryImplHash();
 
   @$internal
   @override
-  $ProviderElement<BlePlatformDataSource> $createElement(
-    $ProviderPointer pointer,
-  ) => $ProviderElement(pointer);
+  $ProviderElement<BleRepository> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
 
   @override
-  BlePlatformDataSource create(Ref ref) {
-    return blePlatformDataSource(ref);
+  BleRepository create(Ref ref) {
+    return bleRepositoryImpl(ref);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(BlePlatformDataSource value) {
+  Override overrideWithValue(BleRepository value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<BlePlatformDataSource>(value),
+      providerOverride: $SyncValueProvider<BleRepository>(value),
     );
   }
 }
 
-String _$blePlatformDataSourceHash() =>
-    r'6f649a8f09249db9d900d44ab8fe7a24f8b08538';
+String _$bleRepositoryImplHash() => r'2f474ac21ef8a1fa822f8fb46a4479b686ff5b9b';
